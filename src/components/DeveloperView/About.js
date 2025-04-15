@@ -18,7 +18,7 @@ const SectionHeader = styled.h2`
 const AboutText = styled.p`
   font-size: 1.1rem;
   line-height: 1.6;
-  color: #333;
+  color: white;
   margin-bottom: 1rem;
 `;
 

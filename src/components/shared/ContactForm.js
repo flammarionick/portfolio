@@ -15,13 +15,14 @@ const ContactForm = () => {
       formRef.current,
       process.env.REACT_APP_EMAILJS_PUBLIC_KEY
     ).then((result) => {
-      console.log('Email sent:', result.text);
+      console.log('✅ Email sent:', result.text);
       alert('🎉 Message sent! Thank you for reaching out.');
       formRef.current.reset();
-    }, (error) => {
-      console.error('Email error:', error.text);
-      alert('😥 Oops, something went wrong. Please try again.');
+    }).catch((error) => {
+      console.error('❌ EmailJS Error:', error);
+      alert('😥 Oops, something went wrong. Please check your internet or try again later.');
     });
+    
   };
 
   return (

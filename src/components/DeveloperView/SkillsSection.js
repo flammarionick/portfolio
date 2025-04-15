@@ -21,7 +21,7 @@ const SkillsGrid = styled.div`
   gap: 20px;
 `;
 const SkillCategory = styled(motion.div)`
-  background: #f5f5f5;
+  background: #e50914;
   padding: 15px;
   border-radius: 8px;
   text-align: left;
