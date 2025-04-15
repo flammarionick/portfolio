@@ -1,0 +1,54 @@
+.about-section {
+  padding: 60px 20px;
+  background-color: #111;
+  color: #ccc;
+}
+
+.about-section h2 {
+  font-size: 1.8em;
+  color: #fff;
+  margin-bottom: 20px;
+  position: relative;
+}
+
+.about-section h2::after {
+  content: '';
+  position: absolute;
+  bottom: -8px;
+  left: 0;
+  width: 60px;
+  height: 3px;
+  background: #e50914;
+}
+
+.about-section p {
+  max-width: 800px;
+  line-height: 1.6;
+  margin-bottom: 15px;
+  font-size: 1rem;
+}
+
+.contact-info {
+  margin-top: 10px;
+}
+
+.contact-info a {
+  color: #e50914;
+  margin-left: 10px;
+  transition: color 0.3s;
+}
+
+.contact-info a:hover {
+  text-decoration: underline;
+}
+
+/* 📱 Responsive */
+@media (max-width: 600px) {
+  .about-section h2 {
+    font-size: 1.5em;
+  }
+
+  .about-section p {
+    font-size: 0.95rem;
+  }
+}

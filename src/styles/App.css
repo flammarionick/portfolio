@@ -1,0 +1,50 @@
+/* App.css */
+/* Global dark theme styles and resets */
+:root {
+  --primary-color: #e50914; /* Netflix red for accents */
+  --bg-color: #000;        /* Black background for dark mode */
+  --text-color: #fff;      /* White text for contrast on dark background */
+  --secondary-text-color: #999; /* Grey for secondary text */
+  --font-family: 'Arial', sans-serif; /* Use a clean, readable font */
+}
+
+html, body, #root, .App {
+  margin: 0;
+  padding: 0;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  font-family: var(--font-family);
+}
+
+/* Smooth scrolling for in-page links */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Headings and text */
+h1, h2, h3, h4 {
+  color: var(--text-color);
+  margin: 0;
+  font-weight: 600;
+}
+p {
+  color: var(--secondary-text-color);
+  line-height: 1.6;
+}
+
+/* Link styles */
+a {
+  color: var(--primary-color);
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+}
+
+/* Utility classes if needed */
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: auto;
+  padding: 20px 0;
+}
