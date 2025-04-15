@@ -1,6 +1,6 @@
 # Nicholas Eke – Netflix-Inspired Portfolio
 
-Welcome to my personal portfolio, designed in a cinematic Netflix style using React. This site showcases my skills in software development, AI/ML engineering, and full-stack projects. Built for performance, responsiveness, and elegance.
+Welcome to my personal portfolio, designed in a cinematic Netflix style using React.Heavily inspired by Sumanth Samala. This site showcases my skills in software development, AI/ML engineering, and full-stack projects. Built for performance, responsiveness, and elegance.
 
 
 

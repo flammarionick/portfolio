@@ -1,0 +1,15 @@
+/* App.css */
+/* Global dark theme styles and resets */
+
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #000;
+  font-family: 'Montserrat', sans-serif;
+  color: #fff;
+}
+
+html {
+  scroll-behavior: smooth;
+}

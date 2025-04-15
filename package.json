@@ -2,27 +2,22 @@
   "name": "nicholas-eke-portfolio",
   "version": "1.0.0",
   "private": true,
-  "description": "Netflix-inspired React portfolio for Nicholas Eke",
+  "dependencies": {
+    "@emailjs/browser": "^4.4.1",
+    "emailjs-com": "^3.2.0",
+    "framer-motion": "^10.12.16",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-router-dom": "^6.14.1",
+    "react-scripts": "5.0.1",
+    "styled-components": "^6.1.17"
+  },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
-  "dependencies": {
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "react-scripts": "5.0.1"
-  },
-  "keywords": [
-    "portfolio",
-    "react",
-    "developer",
-    "ai",
-    "netflix-style"
-  ],
-  "author": "Nicholas Eke",
-  "license": "MIT",
   "browserslist": {
     "production": [
       ">0.2%",
