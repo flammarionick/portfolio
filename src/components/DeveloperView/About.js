@@ -38,6 +38,23 @@ const ContactLink = styled.a`
   }
 `;
 
+const Cv = styled.a`
+display: inline-block;
+margin-top: 1rem;
+padding: 10px 20px;
+background-color: #e50914;
+color: white;
+border-radius: 5px;
+text-decoration: none;
+font-weight: bold;
+transition: background 0.3s ease;
+
+&:hover {
+  background-color: #b0060e;
+}
+`;
+
+
 const About = () => {
   return (
     <AboutSection 
@@ -59,6 +76,16 @@ const About = () => {
         <ContactLink href="mailto:nicholaseke04@gmail.com">nicholaseke04@gmail.com</ContactLink> | 
         <ContactLink href="https://linkedin.com/in/nicholas-eke-481239244" target="_blank" rel="noopener noreferrer">LinkedIn</ContactLink>
       </ContactInfo>
+      <Cv
+  href="/Nicholas_Eke_CV.pdf"
+  download
+  target="_blank"
+  rel="noopener noreferrer"
+  className="cv-download-button"
+>
+  📄 Download My CV
+</Cv>
+
     </AboutSection>
   );
 };
