@@ -32,8 +32,7 @@ const StalkerPage = () => {
           If you're reading this, you either really like me or clicked the wrong link. I'll assume it's the first 😉.
         </FunItem>
         <FunItem whileHover={{ scale: 1.1, rotate: -2 }}>
-          Easter Egg: I might actually be an AI cleverly masquerading as a human developer. 🤖 (Or am I?)
-        </FunItem>
+          Easter Egg: I watch literally everything cinema, because I'm opsessed with creativity        </FunItem>
         <FunItem whileHover={{ scale: 1.1, rotate: 1 }}>
           Fun Fact: My code probably has more coffee in it than bytes. ☕ Debugging at 3 AM actually works (with enough caffeine).
         </FunItem>
