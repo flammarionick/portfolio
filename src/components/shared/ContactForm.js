@@ -1,7 +1,77 @@
 import React, { useRef } from 'react';
 import emailjs from '@emailjs/browser';
-import { motion } from 'framer-motion';
-import '../styles/ContactForm.css';
+import styled from 'styled-components';
+
+const Form = styled.form`
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 30px;
+  background: linear-gradient(135deg, #1e1e1e 0%, #2d2d2d 100%);
+  border-radius: 6px;
+`;
+
+const Input = styled.input`
+  width: 100%;
+  padding: 14px 16px;
+  margin-bottom: 12px;
+  background: #333;
+  border: 1px solid #444;
+  border-radius: 4px;
+  color: #fff;
+  font-size: 0.95rem;
+  transition: border-color 0.2s;
+  box-sizing: border-box;
+
+  &:focus {
+    outline: none;
+    border-color: #e50914;
+  }
+
+  &::placeholder {
+    color: #888;
+  }
+`;
+
+const TextArea = styled.textarea`
+  width: 100%;
+  padding: 14px 16px;
+  margin-bottom: 12px;
+  background: #333;
+  border: 1px solid #444;
+  border-radius: 4px;
+  color: #fff;
+  font-size: 0.95rem;
+  resize: vertical;
+  min-height: 120px;
+  transition: border-color 0.2s;
+  box-sizing: border-box;
+
+  &:focus {
+    outline: none;
+    border-color: #e50914;
+  }
+
+  &::placeholder {
+    color: #888;
+  }
+`;
+
+const SubmitButton = styled.button`
+  width: 100%;
+  padding: 14px;
+  background: #e50914;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s;
+
+  &:hover {
+    background: #b20710;
+  }
+`;
 
 const ContactForm = () => {
   const formRef = useRef();
@@ -15,65 +85,39 @@ const ContactForm = () => {
       formRef.current,
       process.env.REACT_APP_EMAILJS_PUBLIC_KEY
     ).then((result) => {
-      console.log('✅ Email sent:', result.text);
-      alert('🎉 Message sent! Thank you for reaching out.');
+      console.log('Email sent:', result.text);
+      alert('Message sent! Thank you for reaching out.');
       formRef.current.reset();
     }).catch((error) => {
-      console.error('❌ EmailJS Error:', error);
-      alert('😥 Oops, something went wrong. Please check your internet or try again later.');
+      console.error('EmailJS Error:', error);
+      alert('Oops, something went wrong. Please try again later.');
     });
-    
   };
 
   return (
-    <form
-      ref={formRef}
-      onSubmit={sendEmail}
-      style={{
-        maxWidth: '500px',
-        margin: '40px auto',
-        padding: '20px',
-        backgroundColor: '#121212',
-        color: '#fff',
-        borderRadius: '8px'
-      }}
-    >
-      <h3>Contact Me</h3>
-      <input
+    <Form ref={formRef} onSubmit={sendEmail}>
+      <Input
         type="text"
         name="from_name"
         placeholder="Your Name"
         required
-        style={{ width: '100%', padding: '10px', marginBottom: '10px', borderRadius: '4px' }}
       />
-      <input
+      <Input
         type="email"
         name="email"
         placeholder="Your Email"
         required
-        style={{ width: '100%', padding: '10px', marginBottom: '10px', borderRadius: '4px' }}
       />
-      <textarea
+      <TextArea
         name="message"
         placeholder="Your Message"
         required
         rows="5"
-        style={{ width: '100%', padding: '10px', marginBottom: '10px', borderRadius: '4px' }}
       />
-      <button
-        type="submit"
-        style={{
-          backgroundColor: '#e50914',
-          color: '#fff',
-          padding: '10px 20px',
-          border: 'none',
-          cursor: 'pointer',
-          borderRadius: '4px'
-        }}
-      >
-        Send
-      </button>
-    </form>
+      <SubmitButton type="submit">
+        Send Message
+      </SubmitButton>
+    </Form>
   );
 };
 

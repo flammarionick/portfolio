@@ -1,85 +1,87 @@
 import React from 'react';
-import '../styles/Education.css';
 import styled from 'styled-components';
 import { motion } from 'framer-motion';
+import Row from '../shared/Row';
 
-const SectionHeader = styled.h2`
-  font-size: 2rem;
-  margin-bottom: 1.5rem;
+const EduCard = styled(motion.div)`
+  flex: 0 0 350px;
+  min-height: 160px;
+  background: linear-gradient(135deg, #0f2027 0%, #203a43 50%, #2c5364 100%);
+  border-radius: 4px;
+  padding: 25px;
+  position: relative;
+  overflow: hidden;
+`;
+
+const Badge = styled.span`
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: #46d369;
+  color: #000;
+  font-size: 0.65rem;
+  font-weight: 700;
+  padding: 4px 10px;
+  border-radius: 3px;
+  text-transform: uppercase;
+`;
+
+const Degree = styled.h4`
+  font-size: 1.1rem;
+  font-weight: 600;
   color: #fff;
-  text-align: center;
+  margin-bottom: 8px;
 `;
 
-const EducationContainer = styled.section`
-  max-width: 800px;
-  margin: 0 auto;
-  padding: 60px 20px;
-  position: relative;
+const Institution = styled.p`
+  font-size: 0.9rem;
+  color: #4facfe;
+  margin-bottom: 5px;
 `;
-/* We reuse Timeline, TimelineItem, ItemTitle, ItemDetails, ItemDesc, DescPoint styles from Experience */
-const Timeline = styled.div` 
-  border-left: 3px solid #ccc;
-  margin-left: 20px;
-  padding-left: 20px;
+
+const Period = styled.span`
+  font-size: 0.75rem;
+  color: #888;
+  display: block;
+  margin-bottom: 15px;
 `;
-const TimelineItem = styled(motion.div)`
-  position: relative;
-  margin-bottom: 30px;
-  /* Dot indicator */
-  &::before {
-    content: "";
-    position: absolute;
-    left: -34px; /* position to overlay the border line */
-    top: 0.25rem;
-    width: 12px;
-    height: 12px;
-    border: 3px solid #ccc;
-    border-radius: 50%;
-    background: #fff;
-  }
+
+const Description = styled.p`
+  font-size: 0.8rem;
+  color: #b3b3b3;
+  line-height: 1.5;
 `;
-const ItemTitle = styled.h4` font-size: 1.1rem; margin-bottom: 0.2rem; `;
-const ItemDetails = styled.p` font-size: 0.9rem; color: #666; margin-bottom: 0.5rem; `;
-const ItemDesc = styled.ul` font-size: 0.9rem; margin-bottom: 1rem; padding-left: 1.2em; `;
-const DescPoint = styled.li` margin-bottom: 0.3em; `;
 
 const educationData = [
   {
     degree: "B.Sc. Software Engineering",
     institution: "African Leadership University, Kigali",
     period: "May 2023 – Present",
-    details: [
-      "Undergraduate program focused on software development and engineering principles with leadership and self-directed learning.",
-      "Coursework includes full-stack development, algorithms, and data structures, with projects tackling real-world challenges."
-    ]
+    badge: "In Progress",
+    description: "Full-stack development, algorithms, data structures, and self-directed learning. Building real-world projects with modern technologies."
   }
 ];
 
 const Education = () => {
   return (
-    <EducationContainer id="education">
-      <SectionHeader>Education</SectionHeader>
-      <Timeline>
-        {educationData.map((edu, idx) => (
-          <TimelineItem 
-            key={idx}
-            initial={{ opacity: 0, x: -50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-          >
-            <ItemTitle>{edu.degree}</ItemTitle>
-            <ItemDetails>{edu.institution} — {edu.period}</ItemDetails>
-            <ItemDesc>
-              {edu.details.map((pt, i) => <DescPoint key={i}>{pt}</DescPoint>)}
-            </ItemDesc>
-          </TimelineItem>
-        ))}
-      </Timeline>
-    </EducationContainer>
+    <Row id="education" title="Education">
+      {educationData.map((edu, idx) => (
+        <EduCard
+          key={idx}
+          whileHover={{ scale: 1.02 }}
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+        >
+          {edu.badge && <Badge>{edu.badge}</Badge>}
+          <Degree>{edu.degree}</Degree>
+          <Institution>{edu.institution}</Institution>
+          <Period>{edu.period}</Period>
+          <Description>{edu.description}</Description>
+        </EduCard>
+      ))}
+    </Row>
   );
 };
 
 export default Education;
-
-

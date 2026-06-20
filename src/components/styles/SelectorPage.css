@@ -1,57 +1,218 @@
 .selector {
-  text-align: center;
-  padding-top: 10vh;
-  background: #111;
-  min-height: 100vh;
+  background: #141414;
+  height: 100vh;
   color: white;
+  position: relative;
+  font-family: 'Netflix Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  overflow: hidden;
 }
 
-.selector h2 {
-  font-size: 2.5rem;
-  margin-bottom: 2rem;
-}
-
-.selector-buttons {
+/* Header with N logo */
+.selector-header {
+  position: absolute;
+  top: 20px;
+  left: 25px;
   display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 2rem;
+  align-items: center;
+  gap: 6px;
 }
 
-.avatar {
-  width: 120px;
-  height: 120px;
-  border-radius: 10px;
+.header-logo {
+  width: 28px;
+  height: 28px;
+  object-fit: contain;
+}
+
+.brand-name {
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: #fff;
+  letter-spacing: 0.3px;
+}
+
+/* Center content */
+.selector-content {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: 2rem;
+  height: 100vh;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.selector-title {
+  font-size: 2.8rem;
+  font-weight: 400;
+  margin-bottom: 25px;
+  color: #fff;
+  letter-spacing: 0.3px;
+}
+
+/* Profiles grid */
+.profiles-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 25px;
+  margin-bottom: 50px;
+}
+
+.profile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   cursor: pointer;
-  transition: transform 0.3s ease;
+  text-align: center;
 }
 
-.avatar:hover {
-  transform: scale(1.1);
+.profile:hover .profile-icon {
+  border: 3px solid #fff;
 }
 
-.avatar-blue { background: #00aaff; }
-.avatar-gray { background: #aaa; }
-.avatar-red { background: #e50914; }
-.avatar-orange { background: orange; }
-
-.avatar p {
-  margin-top: 8px;
-  font-size: 1rem;
+.profile:hover .profile-name {
   color: #fff;
 }
-.avatar img {
-  width: 80px;
-  height: 80px;
-  border-radius: 10px;
-  margin-bottom: 8px;
+
+/* Netflix smiley face icon */
+.profile-icon {
+  width: 120px;
+  height: 120px;
+  border-radius: 5px;
+  position: relative;
+  border: 3px solid transparent;
+  transition: border 0.15s ease;
+  overflow: hidden;
 }
-.avatar img:hover {
-  transform: scale(1.1);
-  transition: transform 0.3s ease;
+
+.face {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 80%;
+  height: 80%;
+}
+
+.eyes {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 15%;
+  margin-top: 25%;
+}
+
+.eye {
+  width: 12px;
+  height: 12px;
+  background: #fff;
+  border-radius: 50%;
+}
+
+.mouth {
+  width: 55%;
+  height: 16px;
+  margin: 12% auto 0;
+  border: 3px solid #fff;
+  border-color: transparent transparent #fff transparent;
+  border-radius: 0 0 40px 40px;
+}
+
+.profile-name {
+  margin-top: 10px;
+  font-size: 0.9rem;
+  color: #808080;
+  transition: color 0.15s ease;
+  letter-spacing: 0.3px;
+}
+
+/* Manage Profiles button */
+.manage-profiles-btn {
+  background: transparent;
+  border: 1px solid #808080;
+  color: #808080;
+  padding: 8px 20px;
+  font-size: 0.85rem;
+  letter-spacing: 1.5px;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  text-transform: uppercase;
+}
+
+.manage-profiles-btn:hover {
+  border-color: #fff;
+  color: #fff;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .selector-title {
+    font-size: 2rem;
+  }
+
+  .profile-icon {
+    width: 110px;
+    height: 110px;
+  }
+
+  .profiles-container {
+    gap: 20px;
+  }
+
+  .selector-header {
+    left: 15px;
+    top: 15px;
+  }
+
+  .netflix-logo {
+    font-size: 1.8rem;
+  }
+
+  .brand-name {
+    font-size: 1rem;
+  }
+
+  .eye {
+    width: 10px;
+    height: 10px;
+  }
+
+  .mouth {
+    height: 15px;
+    border-width: 3px;
+  }
+}
+
+@media (max-width: 480px) {
+  .selector-title {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+  }
+
+  .profile-icon {
+    width: 85px;
+    height: 85px;
+  }
+
+  .profiles-container {
+    gap: 15px;
+  }
+
+  .profile-name {
+    font-size: 0.85rem;
+  }
+
+  .eye {
+    width: 8px;
+    height: 8px;
+  }
+
+  .mouth {
+    height: 12px;
+    border-width: 2px;
+  }
+
+  .manage-profiles-btn {
+    font-size: 0.85rem;
+    padding: 8px 20px;
+  }
 }
